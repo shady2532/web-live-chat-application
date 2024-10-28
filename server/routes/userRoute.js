@@ -8,4 +8,4 @@ router.post("/login", loginUser);
 router.get("/find/:userId", findUser);
 router.get("/all", findAllUsers);
 
-module.exports = router;    
+module.exports = router;
