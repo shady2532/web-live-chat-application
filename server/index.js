@@ -10,15 +10,15 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/users", userRoute);
 
-app.get("/", (request,response)=>{
+app.get("/", (request, response) => {
     response.send("Welcome to Chatter! :) ");
 });
 
 const port = process.env.PORT || 5000;
 const uri = process.env.ATLAS_URI;
 
-app.listen(port, (request, response)=>{
+app.listen(port, (request, response) => {
     console.log(`Server running on port: ${port}`);
 });
 
-mongoose.connect(uri).then(()=> console.log("MongoDB connection established")).catch((error)=> console.log("MongoDB connection failed: ", error.message));
+mongoose.connect(uri).then(() => console.log("MongoDB connection established")).catch((error) => console.log("MongoDB connection failed: ", error.message));
