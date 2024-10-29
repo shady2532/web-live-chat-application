@@ -1,17 +1,23 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import chat from "./pages/chat";
-import register from "./pages/register";
-import login from "./pages/login";
+import Chat from "./pages/chat";
+import Register from "./pages/register";
+import Login from "./pages/login";
+import NavBar from "./components/navBar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "react-bootstrap";
 
 function App() {
     return (
         <>
-            <Routes>
-                <Route path="/" element={<chat.jsx />} />
-                <Route path="/register" element={<register.jsx />} />
-                <Route path="/login" element={<login.jsx />} />
-                <Route path="*" element={<Navigate to="/" />} />
-            </Routes>
+            <NavBar />
+            <Container >
+                <Routes>
+                    <Route path="/" element={<Chat />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="*" element={<Navigate to="/" />} />
+                </Routes>
+            </Container>
         </>
     );
 }
