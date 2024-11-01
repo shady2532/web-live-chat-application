@@ -16,10 +16,10 @@ const registerUser = async (request, response) => {
 
         let user = await userModel.findOne({ email });
 
-        if (user) return response.status(400).json("User with the given email already exists!");
-        if (!name || !email || !password) return response.status(400).json("All fields are required!");
-        if (!validator.isEmail(email)) return response.status(400).json("Email is not valid!");
-        if (!validator.isStrongPassword(password)) return response.status(400).json("Create a stronger password!");
+        if (user) return response.status(400).json({message: "User with the given email already exists!"});
+        if (!name || !email || !password) return response.status(400).json({message: "All fields are required!"});
+        if (!validator.isEmail(email)) return response.status(400).json({message: "Email is not valid!"});
+        if (!validator.isStrongPassword(password)) return response.status(400).json({message: "Create a stronger password!"});
 
         user = new userModel({ name, email, password });
         const salt = await bcrypt.genSalt(10);
