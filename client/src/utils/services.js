@@ -14,13 +14,13 @@ export const postRequest = async (URL, body) => {
   //console.log(data);
   if (!response.ok) {
     let message;
-    
+
     if (data?.message) {
-        message = data.message;
+      message = data.message;
     } else {
-        message = data;
+      message = data;
     }
-    
+
     return { error: true, message };
   }
 

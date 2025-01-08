@@ -9,15 +9,15 @@ import { AuthContext } from "./context/authContext";
 import { useContext } from "react";
 
 function App() {
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   return (
     <>
       <NavBar />
       <Container>
         <Routes>
-          <Route path="/" element={user? <Chat />: <Login/>} />
-          <Route path="/register" element={user? <Chat/> : <Register />} />
-          <Route path="/login" element={user? <Chat/> : <Login />} />
+          <Route path="/" element={user ? <Chat /> : <Login />} />
+          <Route path="/register" element={user ? <Chat /> : <Register />} />
+          <Route path="/login" element={user ? <Chat /> : <Login />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Container>

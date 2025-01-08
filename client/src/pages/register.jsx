@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/authContext";
 
 const Register = () => {
+  
   const {
     registerInfo,
     updateRegisterInfo,
@@ -11,7 +12,7 @@ const Register = () => {
     isRegisterLoading,
   } = useContext(AuthContext);
   //console.log("shady");
-  
+
   return (
     <>
       <Form onSubmit={registerUser}>
@@ -57,7 +58,7 @@ const Register = () => {
                 {isRegisterLoading ? "Creating your account" : "Register!"}
               </Button>
 
-              {(registerError?.error) && (
+              {registerError?.error && (
                 <Alert variant="danger">
                   <p>{registerError?.message}</p>
                 </Alert>
