@@ -63,9 +63,9 @@ const loginUser = async (request, response) => {
 };
 
 const findUser = async (request, response) => {
-  const userId = request.params.userId;
+  const userID = request.params.userID;
   try {
-    const user = await userModel.findById(userId);
+    const user = await userModel.findById(userID);
 
     response.status(200).json(user);
   } catch (error) {
