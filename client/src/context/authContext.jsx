@@ -20,10 +20,10 @@ export const AuthContextProvider = ({ children }) => {
     email: "",
     password: "",
   });
-  
+
   console.log("User", user);
   console.log("logInInfo", logInInfo);
-  
+
   useEffect(() => {
     const user = localStorage.getItem("User");
     setUser(JSON.parse(user));
@@ -70,14 +70,13 @@ export const AuthContextProvider = ({ children }) => {
         `${baseURL}/users/login`,
         JSON.stringify(logInInfo)
       );
-      
+
       setIsLogInLoading(false);
-      
+
       if (response.error) return setLogInError(response);
 
       localStorage.setItem("User", JSON.stringify(response));
       setUser(response);
-
     },
     [logInInfo]
   );

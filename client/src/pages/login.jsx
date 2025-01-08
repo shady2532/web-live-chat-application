@@ -3,13 +3,8 @@ import { Alert, Col, Row, Stack, Form, Button } from "react-bootstrap";
 import { AuthContext } from "../context/authContext";
 
 const Login = () => {
-  const{
-        logInInfo,
-        updateLogInInfo,
-        logInUser,
-        logInError,
-        isLogInLoading,
-  } = useContext(AuthContext);
+  const { logInInfo, updateLogInInfo, logInUser, logInError, isLogInLoading } =
+    useContext(AuthContext);
 
   return (
     <>
@@ -24,7 +19,7 @@ const Login = () => {
           <Col xs={6}>
             <Stack gap={3}>
               <h2>Sign-in</h2>
-              
+
               <Form.Control
                 type="email"
                 placeholder="E-mail"
