@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const userRoute = require("./routes/userRoute");
 const chatRoute = require("./routes/chatRoute");
+const messageRoute = require("./routes/messageRoute");
 
 const app = express();
 require("dotenv").config();
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/users", userRoute);
 app.use("/api/chats", chatRoute);
+app.use("/api/messages", messageRoute);
 
 app.get("/", (request, response) => {
   response.send("Welcome to Chatter! :) ");
