@@ -8,9 +8,9 @@ const {
 
 const router = express.Router();
 
+router.get("/", findAllUsers);
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/find/:userID", findUser);
-router.get("/all", findAllUsers);
 
 module.exports = router;
